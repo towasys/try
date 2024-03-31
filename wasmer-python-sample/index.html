@@ -1,0 +1,20 @@
+<script src="https://unpkg.com/@wasmer/sdk@latest"></script>
+<script>
+    const { init, Wasmer } = WasmerSDK;
+
+      async function runPython() {
+          await init();
+
+          const packageName = "python/python";
+          const pkg = await Wasmer.fromRegistry(packageName);
+          const instance = await pkg.entrypoint.run({
+              args: ["-c", "print('Hello, World!')"],
+          });
+
+          const { code, stdout } = await instance.wait();
+
+          console.log(`Python exited with ${code}: ${stdout}`);
+      }
+
+      runPython();
+</script>
