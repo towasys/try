@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import Voice, { SpeechStartEvent } from '@react-native-voice/voice';
 import { useState } from 'react';
+import * as Speech from 'expo-speech';
+
 
 export default function App() {
   const [logs, set_logs] = useState<string[]>([]);
@@ -15,7 +16,7 @@ export default function App() {
       <StatusBar style="auto" />
       <View style={{ flex: 1, backgroundColor: "#0AAA", alignItems: "center" }}>
         <Button title="Listen" onPress={() => {
-          Voice.start("ja");
+          Speech.speak("test");
           set_logs(logs => ["test", ...logs]);
         }} />
       </View>
