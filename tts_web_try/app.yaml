@@ -1,0 +1,7 @@
+---
+kind: wasmer.io/App.v0
+name: tts_web_try
+owner: towasys
+package: towasys/tts_web_try@0.1.0
+debug: false
+app_id: da_nX3IVtVUrQjK

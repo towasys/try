@@ -1,0 +1,10 @@
+[package]
+name = "towasys/tts_web_try"
+version = "0.1.0"
+description = "towasys/tts_web_try website"
+
+[dependencies]
+"wasmer/static-web-server" = "^1"
+
+[fs]
+public = "dist"
